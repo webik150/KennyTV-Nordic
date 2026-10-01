@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kenny_tv/src/screens/test_screen/test_screen.dart';
-import 'package:kenny_tv/src/screens/video_redirect_screen/video_redirect_screen.dart';
 import 'package:kenny_tv/src/screens/video_screen/video_screen.dart';
 
 import 'screens/home_screen/home_screen.dart';
@@ -12,37 +11,22 @@ import 'screens/home_screen/home_screen.dart';
 // GoRouter config
 final _router = GoRouter(
   routes: [
-    GoRoute(
-      path: "/",
-      builder: (context, state) => const HomeScreen(),
-    ),
+    GoRoute(path: "/", builder: (context, state) => const HomeScreen()),
     GoRoute(
       path: "/video",
       builder: (context, state) => const VideoScreen(),
-      onExit: (context) {
+      onExit: (context, state) {
         log("Exiting video screen");
         return true;
       },
     ),
-    GoRoute(
-      path: "/video_redirect",
-      builder: (context, state) => const VideoRedirectScreen(),
-      redirect: (context, state) {
-        return "/video";
-      },
-    ),
-    GoRoute(
-      path: "/test",
-      builder: (context, state) => const TestScreen(),
-    ),
+    GoRoute(path: "/test", builder: (context, state) => const TestScreen()),
   ],
 );
 
 /// The Widget that configures your application.
 class MyApp extends StatelessWidget {
-  const MyApp({
-    super.key,
-  });
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

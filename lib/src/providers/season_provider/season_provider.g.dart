@@ -6,19 +6,44 @@ part of 'season_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$seasonHash() => r'4f10d0f1effafe1441c1776dc94dfe966bc6a7b5';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [season].
 @ProviderFor(season)
-final seasonProvider = AutoDisposeFutureProvider<List<Season>>.internal(
-  season,
-  name: r'seasonProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$seasonHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final seasonProvider = SeasonProvider._();
 
-typedef SeasonRef = AutoDisposeFutureProviderRef<List<Season>>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class SeasonProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<Season>>,
+          List<Season>,
+          FutureOr<List<Season>>
+        >
+    with $FutureModifier<List<Season>>, $FutureProvider<List<Season>> {
+  SeasonProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'seasonProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$seasonHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<Season>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<Season>> create(Ref ref) {
+    return season(ref);
+  }
+}
+
+String _$seasonHash() => r'f5a67d2b352a84a26011bf0aee27dc6499bc0147';

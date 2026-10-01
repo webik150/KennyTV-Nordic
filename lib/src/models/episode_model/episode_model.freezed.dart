@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'episode_model.dart';
@@ -9,1048 +9,1747 @@ part of 'episode_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-EpisodeMediaImage _$EpisodeMediaImageFromJson(Map<String, dynamic> json) {
-  return _EpisodeMediaImage.fromJson(json);
-}
 
 /// @nodoc
 mixin _$EpisodeMediaImage {
-  String get url => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EpisodeMediaImageCopyWith<EpisodeMediaImage> get copyWith =>
-      throw _privateConstructorUsedError;
+ String get url;
+/// Create a copy of EpisodeMediaImage
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EpisodeMediaImageCopyWith<EpisodeMediaImage> get copyWith => _$EpisodeMediaImageCopyWithImpl<EpisodeMediaImage>(this as EpisodeMediaImage, _$identity);
+
+  /// Serializes this EpisodeMediaImage to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  final _this = this as EpisodeMediaImage;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EpisodeMediaImage&&(identical(other.url, _this.url) || other.url == _this.url));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+  final _this = this as EpisodeMediaImage;
+  return Object.hash(runtimeType,_this.url);
+}
+
+@override
+String toString() {
+  final _this = this as EpisodeMediaImage;
+  return 'EpisodeMediaImage(url: ${_this.url})';
+}
+
+
 }
 
 /// @nodoc
-abstract class $EpisodeMediaImageCopyWith<$Res> {
-  factory $EpisodeMediaImageCopyWith(
-          EpisodeMediaImage value, $Res Function(EpisodeMediaImage) then) =
-      _$EpisodeMediaImageCopyWithImpl<$Res, EpisodeMediaImage>;
-  @useResult
-  $Res call({String url});
-}
+abstract mixin class $EpisodeMediaImageCopyWith<$Res>  {
+  factory $EpisodeMediaImageCopyWith(EpisodeMediaImage value, $Res Function(EpisodeMediaImage) _then) = _$EpisodeMediaImageCopyWithImpl;
+@useResult
+$Res call({
+ String url
+});
 
+
+
+
+}
 /// @nodoc
-class _$EpisodeMediaImageCopyWithImpl<$Res, $Val extends EpisodeMediaImage>
+class _$EpisodeMediaImageCopyWithImpl<$Res>
     implements $EpisodeMediaImageCopyWith<$Res> {
-  _$EpisodeMediaImageCopyWithImpl(this._value, this._then);
+  _$EpisodeMediaImageCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final EpisodeMediaImage _self;
+  final $Res Function(EpisodeMediaImage) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? url = null,
-  }) {
-    return _then(_value.copyWith(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of EpisodeMediaImage
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? url = null,}) {
+  return _then(EpisodeMediaImage(
+url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$EpisodeMediaImageImplCopyWith<$Res>
-    implements $EpisodeMediaImageCopyWith<$Res> {
-  factory _$$EpisodeMediaImageImplCopyWith(_$EpisodeMediaImageImpl value,
-          $Res Function(_$EpisodeMediaImageImpl) then) =
-      __$$EpisodeMediaImageImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String url});
 }
 
-/// @nodoc
-class __$$EpisodeMediaImageImplCopyWithImpl<$Res>
-    extends _$EpisodeMediaImageCopyWithImpl<$Res, _$EpisodeMediaImageImpl>
-    implements _$$EpisodeMediaImageImplCopyWith<$Res> {
-  __$$EpisodeMediaImageImplCopyWithImpl(_$EpisodeMediaImageImpl _value,
-      $Res Function(_$EpisodeMediaImageImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? url = null,
-  }) {
-    return _then(_$EpisodeMediaImageImpl(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [EpisodeMediaImage].
+extension EpisodeMediaImagePatterns on EpisodeMediaImage {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EpisodeMediaImage value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EpisodeMediaImage() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EpisodeMediaImage value)  $default,){
+final _that = this;
+switch (_that) {
+case _EpisodeMediaImage():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EpisodeMediaImage value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EpisodeMediaImage() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String url)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EpisodeMediaImage() when $default != null:
+return $default(_that.url);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String url)  $default,) {final _that = this;
+switch (_that) {
+case _EpisodeMediaImage():
+return $default(_that.url);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String url)?  $default,) {final _that = this;
+switch (_that) {
+case _EpisodeMediaImage() when $default != null:
+return $default(_that.url);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EpisodeMediaImageImpl implements _EpisodeMediaImage {
-  _$EpisodeMediaImageImpl({required this.url});
 
-  factory _$EpisodeMediaImageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EpisodeMediaImageImplFromJson(json);
+class _EpisodeMediaImage implements EpisodeMediaImage {
+   _EpisodeMediaImage({required this.url});
+  factory _EpisodeMediaImage.fromJson(Map<String, dynamic> json) => _$EpisodeMediaImageFromJson(json);
 
-  @override
-  final String url;
+@override final  String url;
 
-  @override
-  String toString() {
+/// Create a copy of EpisodeMediaImage
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EpisodeMediaImageCopyWith<_EpisodeMediaImage> get copyWith => __$EpisodeMediaImageCopyWithImpl<_EpisodeMediaImage>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EpisodeMediaImageToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _EpisodeMediaImage&&(identical(other.url, url) || other.url == url));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+    return Object.hash(runtimeType,url);
+}
+
+@override
+String toString() {
     return 'EpisodeMediaImage(url: $url)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EpisodeMediaImageImpl &&
-            (identical(other.url, url) || other.url == url));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, url);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EpisodeMediaImageImplCopyWith<_$EpisodeMediaImageImpl> get copyWith =>
-      __$$EpisodeMediaImageImplCopyWithImpl<_$EpisodeMediaImageImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EpisodeMediaImageImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _EpisodeMediaImage implements EpisodeMediaImage {
-  factory _EpisodeMediaImage({required final String url}) =
-      _$EpisodeMediaImageImpl;
 
-  factory _EpisodeMediaImage.fromJson(Map<String, dynamic> json) =
-      _$EpisodeMediaImageImpl.fromJson;
-
-  @override
-  String get url;
-  @override
-  @JsonKey(ignore: true)
-  _$$EpisodeMediaImageImplCopyWith<_$EpisodeMediaImageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
-EpisodeMedia _$EpisodeMediaFromJson(Map<String, dynamic> json) {
-  return _EpisodeMedia.fromJson(json);
+/// @nodoc
+abstract mixin class _$EpisodeMediaImageCopyWith<$Res> implements $EpisodeMediaImageCopyWith<$Res> {
+  factory _$EpisodeMediaImageCopyWith(_EpisodeMediaImage value, $Res Function(_EpisodeMediaImage) _then) = __$EpisodeMediaImageCopyWithImpl;
+@override @useResult
+$Res call({
+ String url
+});
+
+
+
+
 }
+/// @nodoc
+class __$EpisodeMediaImageCopyWithImpl<$Res>
+    implements _$EpisodeMediaImageCopyWith<$Res> {
+  __$EpisodeMediaImageCopyWithImpl(this._self, this._then);
+
+  final _EpisodeMediaImage _self;
+  final $Res Function(_EpisodeMediaImage) _then;
+
+/// Create a copy of EpisodeMediaImage
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? url = null,}) {
+  return _then(_EpisodeMediaImage(
+url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
 
 /// @nodoc
 mixin _$EpisodeMedia {
-  String get duration => throw _privateConstructorUsedError;
-  EpisodeMediaImage get image => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EpisodeMediaCopyWith<EpisodeMedia> get copyWith =>
-      throw _privateConstructorUsedError;
+ String get duration; EpisodeMediaImage get image;
+/// Create a copy of EpisodeMedia
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EpisodeMediaCopyWith<EpisodeMedia> get copyWith => _$EpisodeMediaCopyWithImpl<EpisodeMedia>(this as EpisodeMedia, _$identity);
+
+  /// Serializes this EpisodeMedia to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  final _this = this as EpisodeMedia;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EpisodeMedia&&(identical(other.duration, _this.duration) || other.duration == _this.duration)&&(identical(other.image, _this.image) || other.image == _this.image));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+  final _this = this as EpisodeMedia;
+  return Object.hash(runtimeType,_this.duration,_this.image);
+}
+
+@override
+String toString() {
+  final _this = this as EpisodeMedia;
+  return 'EpisodeMedia(duration: ${_this.duration}, image: ${_this.image})';
+}
+
+
 }
 
 /// @nodoc
-abstract class $EpisodeMediaCopyWith<$Res> {
-  factory $EpisodeMediaCopyWith(
-          EpisodeMedia value, $Res Function(EpisodeMedia) then) =
-      _$EpisodeMediaCopyWithImpl<$Res, EpisodeMedia>;
-  @useResult
-  $Res call({String duration, EpisodeMediaImage image});
+abstract mixin class $EpisodeMediaCopyWith<$Res>  {
+  factory $EpisodeMediaCopyWith(EpisodeMedia value, $Res Function(EpisodeMedia) _then) = _$EpisodeMediaCopyWithImpl;
+@useResult
+$Res call({
+ String duration, EpisodeMediaImage image
+});
 
-  $EpisodeMediaImageCopyWith<$Res> get image;
+
+$EpisodeMediaImageCopyWith<$Res> get image;
+
 }
-
 /// @nodoc
-class _$EpisodeMediaCopyWithImpl<$Res, $Val extends EpisodeMedia>
+class _$EpisodeMediaCopyWithImpl<$Res>
     implements $EpisodeMediaCopyWith<$Res> {
-  _$EpisodeMediaCopyWithImpl(this._value, this._then);
+  _$EpisodeMediaCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final EpisodeMedia _self;
+  final $Res Function(EpisodeMedia) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? duration = null,
-    Object? image = null,
-  }) {
-    return _then(_value.copyWith(
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as EpisodeMediaImage,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $EpisodeMediaImageCopyWith<$Res> get image {
-    return $EpisodeMediaImageCopyWith<$Res>(_value.image, (value) {
-      return _then(_value.copyWith(image: value) as $Val);
-    });
-  }
+/// Create a copy of EpisodeMedia
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? duration = null,Object? image = null,}) {
+  return _then(EpisodeMedia(
+duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as String,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
+as EpisodeMediaImage,
+  ));
+}
+/// Create a copy of EpisodeMedia
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EpisodeMediaImageCopyWith<$Res> get image {
+  
+  return $EpisodeMediaImageCopyWith<$Res>(_self.image, (value) {
+    return _then(_self.copyWith(image: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$EpisodeMediaImplCopyWith<$Res>
-    implements $EpisodeMediaCopyWith<$Res> {
-  factory _$$EpisodeMediaImplCopyWith(
-          _$EpisodeMediaImpl value, $Res Function(_$EpisodeMediaImpl) then) =
-      __$$EpisodeMediaImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String duration, EpisodeMediaImage image});
 
-  @override
-  $EpisodeMediaImageCopyWith<$Res> get image;
+/// Adds pattern-matching-related methods to [EpisodeMedia].
+extension EpisodeMediaPatterns on EpisodeMedia {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EpisodeMedia value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EpisodeMedia() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EpisodeMedia value)  $default,){
+final _that = this;
+switch (_that) {
+case _EpisodeMedia():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EpisodeMedia value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EpisodeMedia() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String duration,  EpisodeMediaImage image)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EpisodeMedia() when $default != null:
+return $default(_that.duration,_that.image);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String duration,  EpisodeMediaImage image)  $default,) {final _that = this;
+switch (_that) {
+case _EpisodeMedia():
+return $default(_that.duration,_that.image);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String duration,  EpisodeMediaImage image)?  $default,) {final _that = this;
+switch (_that) {
+case _EpisodeMedia() when $default != null:
+return $default(_that.duration,_that.image);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$EpisodeMediaImplCopyWithImpl<$Res>
-    extends _$EpisodeMediaCopyWithImpl<$Res, _$EpisodeMediaImpl>
-    implements _$$EpisodeMediaImplCopyWith<$Res> {
-  __$$EpisodeMediaImplCopyWithImpl(
-      _$EpisodeMediaImpl _value, $Res Function(_$EpisodeMediaImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? duration = null,
-    Object? image = null,
-  }) {
-    return _then(_$EpisodeMediaImpl(
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as EpisodeMediaImage,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EpisodeMediaImpl implements _EpisodeMedia {
-  _$EpisodeMediaImpl({required this.duration, required this.image});
 
-  factory _$EpisodeMediaImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EpisodeMediaImplFromJson(json);
+class _EpisodeMedia implements EpisodeMedia {
+   _EpisodeMedia({required this.duration, required this.image});
+  factory _EpisodeMedia.fromJson(Map<String, dynamic> json) => _$EpisodeMediaFromJson(json);
 
-  @override
-  final String duration;
-  @override
-  final EpisodeMediaImage image;
+@override final  String duration;
+@override final  EpisodeMediaImage image;
 
-  @override
-  String toString() {
+/// Create a copy of EpisodeMedia
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EpisodeMediaCopyWith<_EpisodeMedia> get copyWith => __$EpisodeMediaCopyWithImpl<_EpisodeMedia>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EpisodeMediaToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _EpisodeMedia&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.image, image) || other.image == image));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+    return Object.hash(runtimeType,duration,image);
+}
+
+@override
+String toString() {
     return 'EpisodeMedia(duration: $duration, image: $image)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EpisodeMediaImpl &&
-            (identical(other.duration, duration) ||
-                other.duration == duration) &&
-            (identical(other.image, image) || other.image == image));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, duration, image);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EpisodeMediaImplCopyWith<_$EpisodeMediaImpl> get copyWith =>
-      __$$EpisodeMediaImplCopyWithImpl<_$EpisodeMediaImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EpisodeMediaImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _EpisodeMedia implements EpisodeMedia {
-  factory _EpisodeMedia(
-      {required final String duration,
-      required final EpisodeMediaImage image}) = _$EpisodeMediaImpl;
 
-  factory _EpisodeMedia.fromJson(Map<String, dynamic> json) =
-      _$EpisodeMediaImpl.fromJson;
-
-  @override
-  String get duration;
-  @override
-  EpisodeMediaImage get image;
-  @override
-  @JsonKey(ignore: true)
-  _$$EpisodeMediaImplCopyWith<_$EpisodeMediaImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
-EpisodeMeta _$EpisodeMetaFromJson(Map<String, dynamic> json) {
-  return _EpisodeMeta.fromJson(json);
+/// @nodoc
+abstract mixin class _$EpisodeMediaCopyWith<$Res> implements $EpisodeMediaCopyWith<$Res> {
+  factory _$EpisodeMediaCopyWith(_EpisodeMedia value, $Res Function(_EpisodeMedia) _then) = __$EpisodeMediaCopyWithImpl;
+@override @useResult
+$Res call({
+ String duration, EpisodeMediaImage image
+});
+
+
+@override $EpisodeMediaImageCopyWith<$Res> get image;
+
 }
+/// @nodoc
+class __$EpisodeMediaCopyWithImpl<$Res>
+    implements _$EpisodeMediaCopyWith<$Res> {
+  __$EpisodeMediaCopyWithImpl(this._self, this._then);
+
+  final _EpisodeMedia _self;
+  final $Res Function(_EpisodeMedia) _then;
+
+/// Create a copy of EpisodeMedia
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? duration = null,Object? image = null,}) {
+  return _then(_EpisodeMedia(
+duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as String,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
+as EpisodeMediaImage,
+  ));
+}
+
+/// Create a copy of EpisodeMedia
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EpisodeMediaImageCopyWith<$Res> get image {
+  
+  return $EpisodeMediaImageCopyWith<$Res>(_self.image, (value) {
+    return _then(_self.copyWith(image: value));
+  });
+}
+}
+
 
 /// @nodoc
 mixin _$EpisodeMeta {
-  String get subHeader => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get date => throw _privateConstructorUsedError;
-  String get seasonMgid => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EpisodeMetaCopyWith<EpisodeMeta> get copyWith =>
-      throw _privateConstructorUsedError;
+ String get subHeader; String get description; String get date; String get seasonMgid;
+/// Create a copy of EpisodeMeta
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EpisodeMetaCopyWith<EpisodeMeta> get copyWith => _$EpisodeMetaCopyWithImpl<EpisodeMeta>(this as EpisodeMeta, _$identity);
+
+  /// Serializes this EpisodeMeta to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  final _this = this as EpisodeMeta;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EpisodeMeta&&(identical(other.subHeader, _this.subHeader) || other.subHeader == _this.subHeader)&&(identical(other.description, _this.description) || other.description == _this.description)&&(identical(other.date, _this.date) || other.date == _this.date)&&(identical(other.seasonMgid, _this.seasonMgid) || other.seasonMgid == _this.seasonMgid));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+  final _this = this as EpisodeMeta;
+  return Object.hash(runtimeType,_this.subHeader,_this.description,_this.date,_this.seasonMgid);
+}
+
+@override
+String toString() {
+  final _this = this as EpisodeMeta;
+  return 'EpisodeMeta(subHeader: ${_this.subHeader}, description: ${_this.description}, date: ${_this.date}, seasonMgid: ${_this.seasonMgid})';
+}
+
+
 }
 
 /// @nodoc
-abstract class $EpisodeMetaCopyWith<$Res> {
-  factory $EpisodeMetaCopyWith(
-          EpisodeMeta value, $Res Function(EpisodeMeta) then) =
-      _$EpisodeMetaCopyWithImpl<$Res, EpisodeMeta>;
-  @useResult
-  $Res call(
-      {String subHeader, String description, String date, String seasonMgid});
-}
+abstract mixin class $EpisodeMetaCopyWith<$Res>  {
+  factory $EpisodeMetaCopyWith(EpisodeMeta value, $Res Function(EpisodeMeta) _then) = _$EpisodeMetaCopyWithImpl;
+@useResult
+$Res call({
+ String subHeader, String description, String date, String seasonMgid
+});
 
+
+
+
+}
 /// @nodoc
-class _$EpisodeMetaCopyWithImpl<$Res, $Val extends EpisodeMeta>
+class _$EpisodeMetaCopyWithImpl<$Res>
     implements $EpisodeMetaCopyWith<$Res> {
-  _$EpisodeMetaCopyWithImpl(this._value, this._then);
+  _$EpisodeMetaCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final EpisodeMeta _self;
+  final $Res Function(EpisodeMeta) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? subHeader = null,
-    Object? description = null,
-    Object? date = null,
-    Object? seasonMgid = null,
-  }) {
-    return _then(_value.copyWith(
-      subHeader: null == subHeader
-          ? _value.subHeader
-          : subHeader // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      seasonMgid: null == seasonMgid
-          ? _value.seasonMgid
-          : seasonMgid // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of EpisodeMeta
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? subHeader = null,Object? description = null,Object? date = null,Object? seasonMgid = null,}) {
+  return _then(EpisodeMeta(
+subHeader: null == subHeader ? _self.subHeader : subHeader // ignore: cast_nullable_to_non_nullable
+as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,date: null == date ? _self.date : date // ignore: cast_nullable_to_non_nullable
+as String,seasonMgid: null == seasonMgid ? _self.seasonMgid : seasonMgid // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$EpisodeMetaImplCopyWith<$Res>
-    implements $EpisodeMetaCopyWith<$Res> {
-  factory _$$EpisodeMetaImplCopyWith(
-          _$EpisodeMetaImpl value, $Res Function(_$EpisodeMetaImpl) then) =
-      __$$EpisodeMetaImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String subHeader, String description, String date, String seasonMgid});
 }
 
-/// @nodoc
-class __$$EpisodeMetaImplCopyWithImpl<$Res>
-    extends _$EpisodeMetaCopyWithImpl<$Res, _$EpisodeMetaImpl>
-    implements _$$EpisodeMetaImplCopyWith<$Res> {
-  __$$EpisodeMetaImplCopyWithImpl(
-      _$EpisodeMetaImpl _value, $Res Function(_$EpisodeMetaImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? subHeader = null,
-    Object? description = null,
-    Object? date = null,
-    Object? seasonMgid = null,
-  }) {
-    return _then(_$EpisodeMetaImpl(
-      subHeader: null == subHeader
-          ? _value.subHeader
-          : subHeader // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      seasonMgid: null == seasonMgid
-          ? _value.seasonMgid
-          : seasonMgid // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [EpisodeMeta].
+extension EpisodeMetaPatterns on EpisodeMeta {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EpisodeMeta value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EpisodeMeta() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EpisodeMeta value)  $default,){
+final _that = this;
+switch (_that) {
+case _EpisodeMeta():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EpisodeMeta value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EpisodeMeta() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String subHeader,  String description,  String date,  String seasonMgid)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EpisodeMeta() when $default != null:
+return $default(_that.subHeader,_that.description,_that.date,_that.seasonMgid);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String subHeader,  String description,  String date,  String seasonMgid)  $default,) {final _that = this;
+switch (_that) {
+case _EpisodeMeta():
+return $default(_that.subHeader,_that.description,_that.date,_that.seasonMgid);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String subHeader,  String description,  String date,  String seasonMgid)?  $default,) {final _that = this;
+switch (_that) {
+case _EpisodeMeta() when $default != null:
+return $default(_that.subHeader,_that.description,_that.date,_that.seasonMgid);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EpisodeMetaImpl implements _EpisodeMeta {
-  _$EpisodeMetaImpl(
-      {required this.subHeader,
-      required this.description,
-      required this.date,
-      required this.seasonMgid});
 
-  factory _$EpisodeMetaImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EpisodeMetaImplFromJson(json);
+class _EpisodeMeta implements EpisodeMeta {
+   _EpisodeMeta({required this.subHeader, required this.description, required this.date, required this.seasonMgid});
+  factory _EpisodeMeta.fromJson(Map<String, dynamic> json) => _$EpisodeMetaFromJson(json);
 
-  @override
-  final String subHeader;
-  @override
-  final String description;
-  @override
-  final String date;
-  @override
-  final String seasonMgid;
+@override final  String subHeader;
+@override final  String description;
+@override final  String date;
+@override final  String seasonMgid;
 
-  @override
-  String toString() {
+/// Create a copy of EpisodeMeta
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EpisodeMetaCopyWith<_EpisodeMeta> get copyWith => __$EpisodeMetaCopyWithImpl<_EpisodeMeta>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EpisodeMetaToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _EpisodeMeta&&(identical(other.subHeader, subHeader) || other.subHeader == subHeader)&&(identical(other.description, description) || other.description == description)&&(identical(other.date, date) || other.date == date)&&(identical(other.seasonMgid, seasonMgid) || other.seasonMgid == seasonMgid));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+    return Object.hash(runtimeType,subHeader,description,date,seasonMgid);
+}
+
+@override
+String toString() {
     return 'EpisodeMeta(subHeader: $subHeader, description: $description, date: $date, seasonMgid: $seasonMgid)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EpisodeMetaImpl &&
-            (identical(other.subHeader, subHeader) ||
-                other.subHeader == subHeader) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.date, date) || other.date == date) &&
-            (identical(other.seasonMgid, seasonMgid) ||
-                other.seasonMgid == seasonMgid));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, subHeader, description, date, seasonMgid);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EpisodeMetaImplCopyWith<_$EpisodeMetaImpl> get copyWith =>
-      __$$EpisodeMetaImplCopyWithImpl<_$EpisodeMetaImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EpisodeMetaImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _EpisodeMeta implements EpisodeMeta {
-  factory _EpisodeMeta(
-      {required final String subHeader,
-      required final String description,
-      required final String date,
-      required final String seasonMgid}) = _$EpisodeMetaImpl;
 
-  factory _EpisodeMeta.fromJson(Map<String, dynamic> json) =
-      _$EpisodeMetaImpl.fromJson;
-
-  @override
-  String get subHeader;
-  @override
-  String get description;
-  @override
-  String get date;
-  @override
-  String get seasonMgid;
-  @override
-  @JsonKey(ignore: true)
-  _$$EpisodeMetaImplCopyWith<_$EpisodeMetaImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
-Episode _$EpisodeFromJson(Map<String, dynamic> json) {
-  return _Episode.fromJson(json);
+/// @nodoc
+abstract mixin class _$EpisodeMetaCopyWith<$Res> implements $EpisodeMetaCopyWith<$Res> {
+  factory _$EpisodeMetaCopyWith(_EpisodeMeta value, $Res Function(_EpisodeMeta) _then) = __$EpisodeMetaCopyWithImpl;
+@override @useResult
+$Res call({
+ String subHeader, String description, String date, String seasonMgid
+});
+
+
+
+
 }
+/// @nodoc
+class __$EpisodeMetaCopyWithImpl<$Res>
+    implements _$EpisodeMetaCopyWith<$Res> {
+  __$EpisodeMetaCopyWithImpl(this._self, this._then);
+
+  final _EpisodeMeta _self;
+  final $Res Function(_EpisodeMeta) _then;
+
+/// Create a copy of EpisodeMeta
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? subHeader = null,Object? description = null,Object? date = null,Object? seasonMgid = null,}) {
+  return _then(_EpisodeMeta(
+subHeader: null == subHeader ? _self.subHeader : subHeader // ignore: cast_nullable_to_non_nullable
+as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,date: null == date ? _self.date : date // ignore: cast_nullable_to_non_nullable
+as String,seasonMgid: null == seasonMgid ? _self.seasonMgid : seasonMgid // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
 
 /// @nodoc
 mixin _$Episode {
-  String get id => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
-  EpisodeMedia get media => throw _privateConstructorUsedError;
-  EpisodeMeta get meta => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EpisodeCopyWith<Episode> get copyWith => throw _privateConstructorUsedError;
+ String get id; String get url; EpisodeMedia get media; EpisodeMeta get meta;
+/// Create a copy of Episode
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EpisodeCopyWith<Episode> get copyWith => _$EpisodeCopyWithImpl<Episode>(this as Episode, _$identity);
+
+  /// Serializes this Episode to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  final _this = this as Episode;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Episode&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.url, _this.url) || other.url == _this.url)&&(identical(other.media, _this.media) || other.media == _this.media)&&(identical(other.meta, _this.meta) || other.meta == _this.meta));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+  final _this = this as Episode;
+  return Object.hash(runtimeType,_this.id,_this.url,_this.media,_this.meta);
+}
+
+@override
+String toString() {
+  final _this = this as Episode;
+  return 'Episode(id: ${_this.id}, url: ${_this.url}, media: ${_this.media}, meta: ${_this.meta})';
+}
+
+
 }
 
 /// @nodoc
-abstract class $EpisodeCopyWith<$Res> {
-  factory $EpisodeCopyWith(Episode value, $Res Function(Episode) then) =
-      _$EpisodeCopyWithImpl<$Res, Episode>;
-  @useResult
-  $Res call({String id, String url, EpisodeMedia media, EpisodeMeta meta});
+abstract mixin class $EpisodeCopyWith<$Res>  {
+  factory $EpisodeCopyWith(Episode value, $Res Function(Episode) _then) = _$EpisodeCopyWithImpl;
+@useResult
+$Res call({
+ String id, String url, EpisodeMedia media, EpisodeMeta meta
+});
 
-  $EpisodeMediaCopyWith<$Res> get media;
-  $EpisodeMetaCopyWith<$Res> get meta;
+
+$EpisodeMediaCopyWith<$Res> get media;$EpisodeMetaCopyWith<$Res> get meta;
+
 }
-
 /// @nodoc
-class _$EpisodeCopyWithImpl<$Res, $Val extends Episode>
+class _$EpisodeCopyWithImpl<$Res>
     implements $EpisodeCopyWith<$Res> {
-  _$EpisodeCopyWithImpl(this._value, this._then);
+  _$EpisodeCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Episode _self;
+  final $Res Function(Episode) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? url = null,
-    Object? media = null,
-    Object? meta = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      media: null == media
-          ? _value.media
-          : media // ignore: cast_nullable_to_non_nullable
-              as EpisodeMedia,
-      meta: null == meta
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as EpisodeMeta,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $EpisodeMediaCopyWith<$Res> get media {
-    return $EpisodeMediaCopyWith<$Res>(_value.media, (value) {
-      return _then(_value.copyWith(media: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $EpisodeMetaCopyWith<$Res> get meta {
-    return $EpisodeMetaCopyWith<$Res>(_value.meta, (value) {
-      return _then(_value.copyWith(meta: value) as $Val);
-    });
-  }
+/// Create a copy of Episode
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? url = null,Object? media = null,Object? meta = null,}) {
+  return _then(Episode(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,media: null == media ? _self.media : media // ignore: cast_nullable_to_non_nullable
+as EpisodeMedia,meta: null == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
+as EpisodeMeta,
+  ));
+}
+/// Create a copy of Episode
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EpisodeMediaCopyWith<$Res> get media {
+  
+  return $EpisodeMediaCopyWith<$Res>(_self.media, (value) {
+    return _then(_self.copyWith(media: value));
+  });
+}/// Create a copy of Episode
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EpisodeMetaCopyWith<$Res> get meta {
+  
+  return $EpisodeMetaCopyWith<$Res>(_self.meta, (value) {
+    return _then(_self.copyWith(meta: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$EpisodeImplCopyWith<$Res> implements $EpisodeCopyWith<$Res> {
-  factory _$$EpisodeImplCopyWith(
-          _$EpisodeImpl value, $Res Function(_$EpisodeImpl) then) =
-      __$$EpisodeImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, String url, EpisodeMedia media, EpisodeMeta meta});
 
-  @override
-  $EpisodeMediaCopyWith<$Res> get media;
-  @override
-  $EpisodeMetaCopyWith<$Res> get meta;
+/// Adds pattern-matching-related methods to [Episode].
+extension EpisodePatterns on Episode {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Episode value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Episode() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Episode value)  $default,){
+final _that = this;
+switch (_that) {
+case _Episode():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Episode value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Episode() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String url,  EpisodeMedia media,  EpisodeMeta meta)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Episode() when $default != null:
+return $default(_that.id,_that.url,_that.media,_that.meta);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String url,  EpisodeMedia media,  EpisodeMeta meta)  $default,) {final _that = this;
+switch (_that) {
+case _Episode():
+return $default(_that.id,_that.url,_that.media,_that.meta);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String url,  EpisodeMedia media,  EpisodeMeta meta)?  $default,) {final _that = this;
+switch (_that) {
+case _Episode() when $default != null:
+return $default(_that.id,_that.url,_that.media,_that.meta);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$EpisodeImplCopyWithImpl<$Res>
-    extends _$EpisodeCopyWithImpl<$Res, _$EpisodeImpl>
-    implements _$$EpisodeImplCopyWith<$Res> {
-  __$$EpisodeImplCopyWithImpl(
-      _$EpisodeImpl _value, $Res Function(_$EpisodeImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? url = null,
-    Object? media = null,
-    Object? meta = null,
-  }) {
-    return _then(_$EpisodeImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      media: null == media
-          ? _value.media
-          : media // ignore: cast_nullable_to_non_nullable
-              as EpisodeMedia,
-      meta: null == meta
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as EpisodeMeta,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EpisodeImpl implements _Episode {
-  _$EpisodeImpl(
-      {required this.id,
-      required this.url,
-      required this.media,
-      required this.meta});
 
-  factory _$EpisodeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EpisodeImplFromJson(json);
+class _Episode implements Episode {
+   _Episode({required this.id, required this.url, required this.media, required this.meta});
+  factory _Episode.fromJson(Map<String, dynamic> json) => _$EpisodeFromJson(json);
 
-  @override
-  final String id;
-  @override
-  final String url;
-  @override
-  final EpisodeMedia media;
-  @override
-  final EpisodeMeta meta;
+@override final  String id;
+@override final  String url;
+@override final  EpisodeMedia media;
+@override final  EpisodeMeta meta;
 
-  @override
-  String toString() {
+/// Create a copy of Episode
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EpisodeCopyWith<_Episode> get copyWith => __$EpisodeCopyWithImpl<_Episode>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EpisodeToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Episode&&(identical(other.id, id) || other.id == id)&&(identical(other.url, url) || other.url == url)&&(identical(other.media, media) || other.media == media)&&(identical(other.meta, meta) || other.meta == meta));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+    return Object.hash(runtimeType,id,url,media,meta);
+}
+
+@override
+String toString() {
     return 'Episode(id: $id, url: $url, media: $media, meta: $meta)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EpisodeImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.media, media) || other.media == media) &&
-            (identical(other.meta, meta) || other.meta == meta));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, url, media, meta);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EpisodeImplCopyWith<_$EpisodeImpl> get copyWith =>
-      __$$EpisodeImplCopyWithImpl<_$EpisodeImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EpisodeImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _Episode implements Episode {
-  factory _Episode(
-      {required final String id,
-      required final String url,
-      required final EpisodeMedia media,
-      required final EpisodeMeta meta}) = _$EpisodeImpl;
 
-  factory _Episode.fromJson(Map<String, dynamic> json) = _$EpisodeImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get url;
-  @override
-  EpisodeMedia get media;
-  @override
-  EpisodeMeta get meta;
-  @override
-  @JsonKey(ignore: true)
-  _$$EpisodeImplCopyWith<_$EpisodeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
-Episodes _$EpisodesFromJson(Map<String, dynamic> json) {
-  return _Episodes.fromJson(json);
+/// @nodoc
+abstract mixin class _$EpisodeCopyWith<$Res> implements $EpisodeCopyWith<$Res> {
+  factory _$EpisodeCopyWith(_Episode value, $Res Function(_Episode) _then) = __$EpisodeCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String url, EpisodeMedia media, EpisodeMeta meta
+});
+
+
+@override $EpisodeMediaCopyWith<$Res> get media;@override $EpisodeMetaCopyWith<$Res> get meta;
+
 }
+/// @nodoc
+class __$EpisodeCopyWithImpl<$Res>
+    implements _$EpisodeCopyWith<$Res> {
+  __$EpisodeCopyWithImpl(this._self, this._then);
+
+  final _Episode _self;
+  final $Res Function(_Episode) _then;
+
+/// Create a copy of Episode
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? url = null,Object? media = null,Object? meta = null,}) {
+  return _then(_Episode(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,media: null == media ? _self.media : media // ignore: cast_nullable_to_non_nullable
+as EpisodeMedia,meta: null == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
+as EpisodeMeta,
+  ));
+}
+
+/// Create a copy of Episode
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EpisodeMediaCopyWith<$Res> get media {
+  
+  return $EpisodeMediaCopyWith<$Res>(_self.media, (value) {
+    return _then(_self.copyWith(media: value));
+  });
+}/// Create a copy of Episode
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EpisodeMetaCopyWith<$Res> get meta {
+  
+  return $EpisodeMetaCopyWith<$Res>(_self.meta, (value) {
+    return _then(_self.copyWith(meta: value));
+  });
+}
+}
+
 
 /// @nodoc
 mixin _$Episodes {
-  List<Episode> get episodes => throw _privateConstructorUsedError;
-  Season get season => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EpisodesCopyWith<Episodes> get copyWith =>
-      throw _privateConstructorUsedError;
+ List<Episode> get episodes; Season get season;
+/// Create a copy of Episodes
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EpisodesCopyWith<Episodes> get copyWith => _$EpisodesCopyWithImpl<Episodes>(this as Episodes, _$identity);
+
+  /// Serializes this Episodes to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  final _this = this as Episodes;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Episodes&&const DeepCollectionEquality().equals(other.episodes, _this.episodes)&&(identical(other.season, _this.season) || other.season == _this.season));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+  final _this = this as Episodes;
+  return Object.hash(runtimeType,const DeepCollectionEquality().hash(_this.episodes),_this.season);
+}
+
+@override
+String toString() {
+  final _this = this as Episodes;
+  return 'Episodes(episodes: ${_this.episodes}, season: ${_this.season})';
+}
+
+
 }
 
 /// @nodoc
-abstract class $EpisodesCopyWith<$Res> {
-  factory $EpisodesCopyWith(Episodes value, $Res Function(Episodes) then) =
-      _$EpisodesCopyWithImpl<$Res, Episodes>;
-  @useResult
-  $Res call({List<Episode> episodes, Season season});
+abstract mixin class $EpisodesCopyWith<$Res>  {
+  factory $EpisodesCopyWith(Episodes value, $Res Function(Episodes) _then) = _$EpisodesCopyWithImpl;
+@useResult
+$Res call({
+ List<Episode> episodes, Season season
+});
 
-  $SeasonCopyWith<$Res> get season;
+
+$SeasonCopyWith<$Res> get season;
+
 }
-
 /// @nodoc
-class _$EpisodesCopyWithImpl<$Res, $Val extends Episodes>
+class _$EpisodesCopyWithImpl<$Res>
     implements $EpisodesCopyWith<$Res> {
-  _$EpisodesCopyWithImpl(this._value, this._then);
+  _$EpisodesCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Episodes _self;
+  final $Res Function(Episodes) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? episodes = null,
-    Object? season = null,
-  }) {
-    return _then(_value.copyWith(
-      episodes: null == episodes
-          ? _value.episodes
-          : episodes // ignore: cast_nullable_to_non_nullable
-              as List<Episode>,
-      season: null == season
-          ? _value.season
-          : season // ignore: cast_nullable_to_non_nullable
-              as Season,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SeasonCopyWith<$Res> get season {
-    return $SeasonCopyWith<$Res>(_value.season, (value) {
-      return _then(_value.copyWith(season: value) as $Val);
-    });
-  }
+/// Create a copy of Episodes
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? episodes = null,Object? season = null,}) {
+  return _then(Episodes(
+episodes: null == episodes ? _self.episodes : episodes // ignore: cast_nullable_to_non_nullable
+as List<Episode>,season: null == season ? _self.season : season // ignore: cast_nullable_to_non_nullable
+as Season,
+  ));
+}
+/// Create a copy of Episodes
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SeasonCopyWith<$Res> get season {
+  
+  return $SeasonCopyWith<$Res>(_self.season, (value) {
+    return _then(_self.copyWith(season: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$EpisodesImplCopyWith<$Res>
-    implements $EpisodesCopyWith<$Res> {
-  factory _$$EpisodesImplCopyWith(
-          _$EpisodesImpl value, $Res Function(_$EpisodesImpl) then) =
-      __$$EpisodesImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<Episode> episodes, Season season});
 
-  @override
-  $SeasonCopyWith<$Res> get season;
+/// Adds pattern-matching-related methods to [Episodes].
+extension EpisodesPatterns on Episodes {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Episodes value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Episodes() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Episodes value)  $default,){
+final _that = this;
+switch (_that) {
+case _Episodes():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Episodes value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Episodes() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<Episode> episodes,  Season season)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Episodes() when $default != null:
+return $default(_that.episodes,_that.season);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<Episode> episodes,  Season season)  $default,) {final _that = this;
+switch (_that) {
+case _Episodes():
+return $default(_that.episodes,_that.season);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<Episode> episodes,  Season season)?  $default,) {final _that = this;
+switch (_that) {
+case _Episodes() when $default != null:
+return $default(_that.episodes,_that.season);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$EpisodesImplCopyWithImpl<$Res>
-    extends _$EpisodesCopyWithImpl<$Res, _$EpisodesImpl>
-    implements _$$EpisodesImplCopyWith<$Res> {
-  __$$EpisodesImplCopyWithImpl(
-      _$EpisodesImpl _value, $Res Function(_$EpisodesImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? episodes = null,
-    Object? season = null,
-  }) {
-    return _then(_$EpisodesImpl(
-      episodes: null == episodes
-          ? _value._episodes
-          : episodes // ignore: cast_nullable_to_non_nullable
-              as List<Episode>,
-      season: null == season
-          ? _value.season
-          : season // ignore: cast_nullable_to_non_nullable
-              as Season,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EpisodesImpl implements _Episodes {
-  _$EpisodesImpl({required final List<Episode> episodes, required this.season})
-      : _episodes = episodes;
 
-  factory _$EpisodesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EpisodesImplFromJson(json);
+class _Episodes implements Episodes {
+   _Episodes({required  List<Episode> episodes, required this.season}): _episodes = episodes;
+  factory _Episodes.fromJson(Map<String, dynamic> json) => _$EpisodesFromJson(json);
 
-  final List<Episode> _episodes;
-  @override
-  List<Episode> get episodes {
-    if (_episodes is EqualUnmodifiableListView) return _episodes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_episodes);
-  }
+ final  List<Episode> _episodes;
+@override List<Episode> get episodes {
+  if (_episodes is EqualUnmodifiableListView) return _episodes;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_episodes);
+}
 
-  @override
-  final Season season;
+@override final  Season season;
 
-  @override
-  String toString() {
+/// Create a copy of Episodes
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EpisodesCopyWith<_Episodes> get copyWith => __$EpisodesCopyWithImpl<_Episodes>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EpisodesToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Episodes&&const DeepCollectionEquality().equals(other.episodes, _episodes)&&(identical(other.season, season) || other.season == season));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+    return Object.hash(runtimeType,const DeepCollectionEquality().hash(_episodes),season);
+}
+
+@override
+String toString() {
     return 'Episodes(episodes: $episodes, season: $season)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EpisodesImpl &&
-            const DeepCollectionEquality().equals(other._episodes, _episodes) &&
-            (identical(other.season, season) || other.season == season));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_episodes), season);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EpisodesImplCopyWith<_$EpisodesImpl> get copyWith =>
-      __$$EpisodesImplCopyWithImpl<_$EpisodesImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EpisodesImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _Episodes implements Episodes {
-  factory _Episodes(
-      {required final List<Episode> episodes,
-      required final Season season}) = _$EpisodesImpl;
 
-  factory _Episodes.fromJson(Map<String, dynamic> json) =
-      _$EpisodesImpl.fromJson;
-
-  @override
-  List<Episode> get episodes;
-  @override
-  Season get season;
-  @override
-  @JsonKey(ignore: true)
-  _$$EpisodesImplCopyWith<_$EpisodesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
-EpisodesResponse _$EpisodesResponseFromJson(Map<String, dynamic> json) {
-  return _EpisodesResponse.fromJson(json);
+/// @nodoc
+abstract mixin class _$EpisodesCopyWith<$Res> implements $EpisodesCopyWith<$Res> {
+  factory _$EpisodesCopyWith(_Episodes value, $Res Function(_Episodes) _then) = __$EpisodesCopyWithImpl;
+@override @useResult
+$Res call({
+ List<Episode> episodes, Season season
+});
+
+
+@override $SeasonCopyWith<$Res> get season;
+
 }
+/// @nodoc
+class __$EpisodesCopyWithImpl<$Res>
+    implements _$EpisodesCopyWith<$Res> {
+  __$EpisodesCopyWithImpl(this._self, this._then);
+
+  final _Episodes _self;
+  final $Res Function(_Episodes) _then;
+
+/// Create a copy of Episodes
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? episodes = null,Object? season = null,}) {
+  return _then(_Episodes(
+episodes: null == episodes ? _self._episodes : episodes // ignore: cast_nullable_to_non_nullable
+as List<Episode>,season: null == season ? _self.season : season // ignore: cast_nullable_to_non_nullable
+as Season,
+  ));
+}
+
+/// Create a copy of Episodes
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SeasonCopyWith<$Res> get season {
+  
+  return $SeasonCopyWith<$Res>(_self.season, (value) {
+    return _then(_self.copyWith(season: value));
+  });
+}
+}
+
 
 /// @nodoc
 mixin _$EpisodesResponse {
-  Episodes get items => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EpisodesResponseCopyWith<EpisodesResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+ Episodes get items;
+/// Create a copy of EpisodesResponse
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EpisodesResponseCopyWith<EpisodesResponse> get copyWith => _$EpisodesResponseCopyWithImpl<EpisodesResponse>(this as EpisodesResponse, _$identity);
+
+  /// Serializes this EpisodesResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  final _this = this as EpisodesResponse;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EpisodesResponse&&(identical(other.items, _this.items) || other.items == _this.items));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+  final _this = this as EpisodesResponse;
+  return Object.hash(runtimeType,_this.items);
+}
+
+@override
+String toString() {
+  final _this = this as EpisodesResponse;
+  return 'EpisodesResponse(items: ${_this.items})';
+}
+
+
 }
 
 /// @nodoc
-abstract class $EpisodesResponseCopyWith<$Res> {
-  factory $EpisodesResponseCopyWith(
-          EpisodesResponse value, $Res Function(EpisodesResponse) then) =
-      _$EpisodesResponseCopyWithImpl<$Res, EpisodesResponse>;
-  @useResult
-  $Res call({Episodes items});
+abstract mixin class $EpisodesResponseCopyWith<$Res>  {
+  factory $EpisodesResponseCopyWith(EpisodesResponse value, $Res Function(EpisodesResponse) _then) = _$EpisodesResponseCopyWithImpl;
+@useResult
+$Res call({
+ Episodes items
+});
 
-  $EpisodesCopyWith<$Res> get items;
+
+$EpisodesCopyWith<$Res> get items;
+
 }
-
 /// @nodoc
-class _$EpisodesResponseCopyWithImpl<$Res, $Val extends EpisodesResponse>
+class _$EpisodesResponseCopyWithImpl<$Res>
     implements $EpisodesResponseCopyWith<$Res> {
-  _$EpisodesResponseCopyWithImpl(this._value, this._then);
+  _$EpisodesResponseCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final EpisodesResponse _self;
+  final $Res Function(EpisodesResponse) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? items = null,
-  }) {
-    return _then(_value.copyWith(
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as Episodes,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $EpisodesCopyWith<$Res> get items {
-    return $EpisodesCopyWith<$Res>(_value.items, (value) {
-      return _then(_value.copyWith(items: value) as $Val);
-    });
-  }
+/// Create a copy of EpisodesResponse
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? items = null,}) {
+  return _then(EpisodesResponse(
+items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as Episodes,
+  ));
+}
+/// Create a copy of EpisodesResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EpisodesCopyWith<$Res> get items {
+  
+  return $EpisodesCopyWith<$Res>(_self.items, (value) {
+    return _then(_self.copyWith(items: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$EpisodesResponseImplCopyWith<$Res>
-    implements $EpisodesResponseCopyWith<$Res> {
-  factory _$$EpisodesResponseImplCopyWith(_$EpisodesResponseImpl value,
-          $Res Function(_$EpisodesResponseImpl) then) =
-      __$$EpisodesResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({Episodes items});
 
-  @override
-  $EpisodesCopyWith<$Res> get items;
+/// Adds pattern-matching-related methods to [EpisodesResponse].
+extension EpisodesResponsePatterns on EpisodesResponse {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _EpisodesResponse value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _EpisodesResponse() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _EpisodesResponse value)  $default,){
+final _that = this;
+switch (_that) {
+case _EpisodesResponse():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _EpisodesResponse value)?  $default,){
+final _that = this;
+switch (_that) {
+case _EpisodesResponse() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Episodes items)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _EpisodesResponse() when $default != null:
+return $default(_that.items);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Episodes items)  $default,) {final _that = this;
+switch (_that) {
+case _EpisodesResponse():
+return $default(_that.items);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Episodes items)?  $default,) {final _that = this;
+switch (_that) {
+case _EpisodesResponse() when $default != null:
+return $default(_that.items);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$EpisodesResponseImplCopyWithImpl<$Res>
-    extends _$EpisodesResponseCopyWithImpl<$Res, _$EpisodesResponseImpl>
-    implements _$$EpisodesResponseImplCopyWith<$Res> {
-  __$$EpisodesResponseImplCopyWithImpl(_$EpisodesResponseImpl _value,
-      $Res Function(_$EpisodesResponseImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? items = null,
-  }) {
-    return _then(_$EpisodesResponseImpl(
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as Episodes,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EpisodesResponseImpl implements _EpisodesResponse {
-  _$EpisodesResponseImpl({required this.items});
 
-  factory _$EpisodesResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EpisodesResponseImplFromJson(json);
+class _EpisodesResponse implements EpisodesResponse {
+   _EpisodesResponse({required this.items});
+  factory _EpisodesResponse.fromJson(Map<String, dynamic> json) => _$EpisodesResponseFromJson(json);
 
-  @override
-  final Episodes items;
+@override final  Episodes items;
 
-  @override
-  String toString() {
+/// Create a copy of EpisodesResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EpisodesResponseCopyWith<_EpisodesResponse> get copyWith => __$EpisodesResponseCopyWithImpl<_EpisodesResponse>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$EpisodesResponseToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _EpisodesResponse&&(identical(other.items, items) || other.items == items));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode {
+    return Object.hash(runtimeType,items);
+}
+
+@override
+String toString() {
     return 'EpisodesResponse(items: $items)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EpisodesResponseImpl &&
-            (identical(other.items, items) || other.items == items));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, items);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EpisodesResponseImplCopyWith<_$EpisodesResponseImpl> get copyWith =>
-      __$$EpisodesResponseImplCopyWithImpl<_$EpisodesResponseImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EpisodesResponseImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _EpisodesResponse implements EpisodesResponse {
-  factory _EpisodesResponse({required final Episodes items}) =
-      _$EpisodesResponseImpl;
 
-  factory _EpisodesResponse.fromJson(Map<String, dynamic> json) =
-      _$EpisodesResponseImpl.fromJson;
-
-  @override
-  Episodes get items;
-  @override
-  @JsonKey(ignore: true)
-  _$$EpisodesResponseImplCopyWith<_$EpisodesResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+abstract mixin class _$EpisodesResponseCopyWith<$Res> implements $EpisodesResponseCopyWith<$Res> {
+  factory _$EpisodesResponseCopyWith(_EpisodesResponse value, $Res Function(_EpisodesResponse) _then) = __$EpisodesResponseCopyWithImpl;
+@override @useResult
+$Res call({
+ Episodes items
+});
+
+
+@override $EpisodesCopyWith<$Res> get items;
+
+}
+/// @nodoc
+class __$EpisodesResponseCopyWithImpl<$Res>
+    implements _$EpisodesResponseCopyWith<$Res> {
+  __$EpisodesResponseCopyWithImpl(this._self, this._then);
+
+  final _EpisodesResponse _self;
+  final $Res Function(_EpisodesResponse) _then;
+
+/// Create a copy of EpisodesResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? items = null,}) {
+  return _then(_EpisodesResponse(
+items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as Episodes,
+  ));
+}
+
+/// Create a copy of EpisodesResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$EpisodesCopyWith<$Res> get items {
+  
+  return $EpisodesCopyWith<$Res>(_self.items, (value) {
+    return _then(_self.copyWith(items: value));
+  });
+}
+}
+
+// dart format on

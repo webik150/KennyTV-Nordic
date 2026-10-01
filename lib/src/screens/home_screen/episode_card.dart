@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import "dart:developer";
 
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:kenny_tv/src/models/episode_model/episode_model.dart';
 import 'package:kenny_tv/src/providers/selected_episode_provider/selected_episode_provider.dart';
 
@@ -12,10 +10,10 @@ class EpisodeCard extends ConsumerStatefulWidget {
   final int episodeNumber;
 
   const EpisodeCard({
-    Key? key,
+    super.key,
     required this.episode,
     required this.episodeNumber,
-  }) : super(key: key);
+  });
 
   @override
   EpisodeCardState createState() => EpisodeCardState();

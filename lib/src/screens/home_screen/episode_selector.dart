@@ -9,7 +9,7 @@ class EpisodeSelector extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final seasonEpisodes = ref.watch(selectedSeasonNotifierProvider);
+    final seasonEpisodes = ref.watch(selectedSeasonProvider);
 
     return Align(
       alignment: Alignment.bottomLeft,

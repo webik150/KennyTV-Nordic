@@ -6,19 +6,44 @@ part of 'episodes_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$episodesHash() => r'2ac4293e1fae30d5ffb180d47f6310a458ff8456';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [episodes].
 @ProviderFor(episodes)
-final episodesProvider = AutoDisposeFutureProvider<List<Episodes>>.internal(
-  episodes,
-  name: r'episodesProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$episodesHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final episodesProvider = EpisodesProvider._();
 
-typedef EpisodesRef = AutoDisposeFutureProviderRef<List<Episodes>>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+final class EpisodesProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<Episodes>>,
+          List<Episodes>,
+          FutureOr<List<Episodes>>
+        >
+    with $FutureModifier<List<Episodes>>, $FutureProvider<List<Episodes>> {
+  EpisodesProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'episodesProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$episodesHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<Episodes>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<Episodes>> create(Ref ref) {
+    return episodes(ref);
+  }
+}
+
+String _$episodesHash() => r'536cfc2bf21307084d5f3dbf479653cac136bc97';

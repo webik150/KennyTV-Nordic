@@ -12,7 +12,7 @@ class TestScreen extends ConsumerStatefulWidget {
 class _TestScreenState extends ConsumerState<TestScreen> {
   @override
   Widget build(BuildContext context) {
-    final a = ref.watch(episodesProvider).value;
+    ref.watch(episodesProvider);
 
     return const Center(
       child: Text("asd"),

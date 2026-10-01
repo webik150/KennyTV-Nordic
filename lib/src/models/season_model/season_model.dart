@@ -4,9 +4,9 @@ part "season_model.freezed.dart";
 part "season_model.g.dart";
 
 @freezed
-class Season with _$Season {
+abstract class Season with _$Season {
   static RegExp regexShortId = RegExp(r"(?<=south-park\/)[a-zA-Z0-9]+");
-  static RegExp regexNumber = RegExp(r"(?<=staffel-)\d+");
+  static RegExp regexNumber = RegExp(r"(?<=season-)\d+");
 
   factory Season({
     required String url,

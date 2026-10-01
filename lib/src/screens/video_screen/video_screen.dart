@@ -1,7 +1,5 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenny_tv/src/providers/next_episode_provider/next_episode_provider.dart';
 import 'package:kenny_tv/src/providers/selected_episode_provider/selected_episode_provider.dart';
@@ -17,7 +15,7 @@ class VideoScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedEpisode = ref.watch(selectedEpisodeProvider);
     final nextEpisode = selectedEpisode != null
-        ? ref.watch(NextEpisodeProvider(selectedEpisode))
+        ? ref.watch(nextEpisodeProvider(selectedEpisode))
         : null;
 
     return Scaffold(

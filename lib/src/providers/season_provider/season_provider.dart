@@ -43,16 +43,16 @@ Future<HashSet<Season>> processSeasonUrl(
 }
 
 @riverpod
-Future<List<Season>> season(SeasonRef ref) async {
+Future<List<Season>> season(Ref ref) async {
   final stopwatch = Stopwatch()..start();
 
   final oldSeasons = await processSeasonUrl(
-      "https://www.southpark.de/seasons/south-park", null);
+      "https://www.southparkstudios.nu/seasons/south-park", null);
 
   final firstSeasonElement = oldSeasons.first;
 
   final allSeasons = await processSeasonUrl(
-      "https://www.southpark.de${firstSeasonElement.seasonUrl}", oldSeasons);
+      "https://www.southparkstudios.nu${firstSeasonElement.seasonUrl}", oldSeasons);
 
   var seasons = allSeasons.toList()
     ..sort((a, b) => a.seasonNumber.compareTo(b.seasonNumber));

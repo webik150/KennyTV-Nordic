@@ -3,9 +3,7 @@ import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kenny_tv/src/models/episode_model/episode_model.dart';
@@ -85,8 +83,8 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
 
     switch (event.logicalKey) {
       case LogicalKeyboardKey.select ||
-            LogicalKeyboardKey.mediaPlay ||
-            LogicalKeyboardKey.mediaPlayPause:
+          LogicalKeyboardKey.mediaPlay ||
+          LogicalKeyboardKey.mediaPlayPause:
         setState(() {
           if (_showNextEpisode) {
             _playNextEpisode(context);
@@ -106,30 +104,22 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
         break;
       case LogicalKeyboardKey.arrowLeft:
         widget.controller.seekTo(
-          Duration(
-            seconds: widget.controller.value.position.inSeconds - 10,
-          ),
+          Duration(seconds: widget.controller.value.position.inSeconds - 10),
         );
         break;
       case LogicalKeyboardKey.arrowRight:
         widget.controller.seekTo(
-          Duration(
-            seconds: widget.controller.value.position.inSeconds + 10,
-          ),
+          Duration(seconds: widget.controller.value.position.inSeconds + 10),
         );
         break;
       case LogicalKeyboardKey.mediaRewind:
         widget.controller.seekTo(
-          Duration(
-            seconds: widget.controller.value.position.inSeconds - 30,
-          ),
+          Duration(seconds: widget.controller.value.position.inSeconds - 30),
         );
         break;
       case LogicalKeyboardKey.mediaFastForward:
         widget.controller.seekTo(
-          Duration(
-            seconds: widget.controller.value.position.inSeconds + 30,
-          ),
+          Duration(seconds: widget.controller.value.position.inSeconds + 30),
         );
         break;
       case LogicalKeyboardKey.goBack:
@@ -142,14 +132,17 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
   }
 
   void _playNextEpisode(BuildContext context) {
-    if (widget.nextEpisode != null) {
+    if (widget.nextEpisode != null && !_nextEpisodeStarted) {
+      _nextEpisodeStarted = true;
       // Play next episode
       ref
           .read(selectedEpisodeProvider.notifier)
           .setEpisode(widget.nextEpisode!);
-      context.pushReplacement("/video_redirect");
+      context.pushReplacement("/video");
     }
   }
+
+  bool _nextEpisodeStarted = false;
 
   @override
   void initState() {
@@ -162,7 +155,8 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
     widget.controller.addListener(() {
       setState(() {
         _currentPosition = widget.controller.value.position;
-        _videoProgress = widget.controller.value.position.inMilliseconds /
+        _videoProgress =
+            widget.controller.value.position.inMilliseconds /
             widget.controller.value.duration.inMilliseconds;
 
         int remainingSeconds = (_totalDuration - _currentPosition).inSeconds;
@@ -224,10 +218,7 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [
-                      Color.fromARGB(100, 0, 0, 0),
-                      Colors.black,
-                    ],
+                    colors: [Color.fromARGB(100, 0, 0, 0), Colors.black],
                   ),
                 ),
                 child: Padding(
@@ -253,7 +244,8 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
                                 alignment: Alignment.center,
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: _controlInsidePadding),
+                                    horizontal: _controlInsidePadding,
+                                  ),
                                   child: Flex(
                                     direction: Axis.horizontal,
                                     children: [
@@ -279,10 +271,11 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
                                       Expanded(
                                         child: LinearProgressIndicator(
                                           value: _videoProgress,
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
+                                          borderRadius: BorderRadius.circular(
+                                            5.0,
+                                          ),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -305,7 +298,9 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
                 child: _showSkipIntro
                     ? Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 15.0, vertical: 5.0),
+                          horizontal: 15.0,
+                          vertical: 5.0,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(5.0),
@@ -317,11 +312,10 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
                             Text(
                               "Skip Intro",
                               style: TextStyle(
-                                  color: Theme.of(context).primaryColor),
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
-                            const SizedBox(
-                              width: 10.0,
-                            ),
+                            const SizedBox(width: 10.0),
                             Icon(
                               Icons.fast_forward_rounded,
                               color: Theme.of(context).primaryColor,
@@ -350,7 +344,8 @@ class _VideoPlayerControlsState extends ConsumerState<VideoPlayerControls>
                                 borderRadius: BorderRadius.circular(15.0),
                                 image: DecorationImage(
                                   image: NetworkImage(
-                                      widget.nextEpisode!.media.image.url),
+                                    widget.nextEpisode!.media.image.url,
+                                  ),
                                   fit: BoxFit.cover,
                                 ),
                               ),

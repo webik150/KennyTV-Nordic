@@ -15,10 +15,10 @@ RegExp seasonLongIdRegExp = RegExp(
   r"(?<=arc:season:southpark\.intl:)[a-z0-9\-]+",
 );
 
-Future<List<Season>> processSeasonUrl(
-  String url,
-) async {
+Future<List<Season>> processSeasonUrl(String url) async {
+  log("Fetching seasons from $url");
   final response = await dio.get(url);
+  log("Fetched seasons page from $url with status ${response.statusCode}");
   final document = parse(response.data);
 
   final dropDownList = document.body!.querySelector(
@@ -26,6 +26,7 @@ Future<List<Season>> processSeasonUrl(
   );
 
   final listElements = dropDownList!.getElementsByTagName("li");
+  log("Found ${listElements.length} season entries at $url");
 
   List<Future<Season>> seasonFutures = [];
 
@@ -39,14 +40,47 @@ Future<List<Season>> processSeasonUrl(
 
     final seasonUrl = aTag.attributes["href"]!;
     final seasonFuture = dio
-        .get<String>("https://www.southpark.de$seasonUrl")
+        .get<String>("https://www.southparkstudios.nu$seasonUrl")
         .then((htmlResponse) {
-      final seasonLongId =
-          seasonLongIdRegExp.firstMatch(htmlResponse.data!)![0]!;
+          log(
+            "Fetched season page $seasonUrl with status ${htmlResponse.statusCode}",
+          );
+          final html = htmlResponse.data;
+          if (html == null) {
+            throw StateError("Season page returned no HTML for $seasonUrl");
+          }
 
-      return Season.fromUrl(
-          seasonUrl, "mgid:arc:season:southpark.intl:$seasonLongId");
-    });
+          final seasonLongIdMatch = seasonLongIdRegExp.firstMatch(html);
+          if (seasonLongIdMatch == null) {
+            throw StateError(
+              "Could not find a season ID in the response for $seasonUrl",
+            );
+          }
+
+          final seasonLongId = seasonLongIdMatch.group(0)!;
+
+          try {
+            return Season.fromUrl(
+              seasonUrl,
+              "mgid:arc:season:southpark.intl:$seasonLongId",
+            );
+          } catch (error, stackTrace) {
+            log(
+              "Failed to parse season metadata for $seasonUrl: $error",
+              error: error,
+              stackTrace: stackTrace,
+            );
+            rethrow;
+          }
+        })
+        .catchError((Object error, StackTrace stackTrace) {
+          log(
+            "Failed to process season page $seasonUrl: $error",
+            error: error,
+            stackTrace: stackTrace,
+          );
+          throw error;
+        });
 
     seasonFutures.add(seasonFuture);
   }
@@ -55,37 +89,59 @@ Future<List<Season>> processSeasonUrl(
 }
 
 Future<List<Season>> fetchSeasons() async {
-  final allSeasonsExceptLatest =
-      await processSeasonUrl("https://www.southpark.de/seasons/south-park");
+  log("Fetching seasons");
+  final allSeasonsExceptLatest = await processSeasonUrl(
+    "https://www.southparkstudios.nu/seasons/south-park",
+  );
   final allSeasonsExceptFirst = await processSeasonUrl(
-      "https://www.southpark.de${allSeasonsExceptLatest.first.url}");
+    "https://www.southparkstudios.nu${allSeasonsExceptLatest.first.url}",
+  );
 
-  final allSeasons =
-      Set<Season>.from(allSeasonsExceptFirst + allSeasonsExceptLatest).toList();
+  final allSeasons = Set<Season>.from(
+    allSeasonsExceptFirst + allSeasonsExceptLatest,
+  ).toList();
 
   allSeasons.sort((a, b) => a.number.compareTo(b.number));
+
+  log("Fetched ${allSeasons.length} seasons");
 
   return allSeasons;
 }
 
 Future<Episodes> fetchEpisodesForSeason(Season season) async {
+  log(
+    "Fetching episodes for season ${season.number} (${season.encodedSeasonId})",
+  );
   final episodesResponse = await dio.get<String>(
-      "https://www.southpark.de/api/context/${season.encodedSeasonId}/episode/1/30/ascending");
+    "https://www.southparkstudios.nu/api/context/${season.encodedSeasonId}/episode/1/30/ascending",
+  );
+  log(
+    "Fetched episodes for season ${season.number} with status ${episodesResponse.statusCode}",
+  );
 
   final json = jsonDecode(episodesResponse.data!) as Map<String, dynamic>;
+  final itemCount = (json["items"] as List<dynamic>).length;
 
   // Remove entries, where the episode is not available
   // This can be looked up by checking if ["media"]["lockedLabel"] is not null
-  json["items"]
-      .removeWhere((episode) => episode["media"]["lockedLabel"] != null);
+  json["items"].removeWhere(
+    (episode) => episode["media"]["lockedLabel"] != null,
+  );
 
-  final episodes =
-      Episodes.fromJson({"episodes": json["items"], "season": season.toJson()});
+  log(
+    "Season ${season.number}: filtered ${itemCount - (json["items"] as List<dynamic>).length} locked episodes; ${json["items"].length} remain",
+  );
+
+  final episodes = Episodes.fromJson({
+    "episodes": json["items"],
+    "season": season.toJson(),
+  });
 
   return episodes;
 }
 
 Future<List<Episodes>> fetchEpisodes(List<Season> seasons) async {
+  log("Fetching episodes for ${seasons.length} seasons");
   final List<Future<Episodes>> futures = [];
   for (var season in seasons) {
     final future = fetchEpisodesForSeason(season);
@@ -93,15 +149,15 @@ Future<List<Episodes>> fetchEpisodes(List<Season> seasons) async {
   }
 
   final results = await Future.wait(futures);
-  results.sort(
-    (a, b) => a.season.number.compareTo(b.season.number),
-  );
+  results.sort((a, b) => a.season.number.compareTo(b.season.number));
+
+  log("Fetched episodes for ${results.length} seasons");
 
   return results;
 }
 
 @riverpod
-Future<List<Episodes>> episodes(EpisodesRef ref) async {
+Future<List<Episodes>> episodes(Ref ref) async {
   // Start stopwatch
   Stopwatch stopwatch = Stopwatch()..start();
 
@@ -115,8 +171,12 @@ Future<List<Episodes>> episodes(EpisodesRef ref) async {
   var seasons = Season.fromJsonList(seasonRecords);
 
   if (seasons == null) {
+    log("No cached seasons found; fetching seasons");
     seasons = await fetchSeasons();
     await store.record("seasons").put(db, Season.toJsonList(seasons));
+    log("Cached ${seasons.length} seasons");
+  } else {
+    log("Loaded ${seasons.length} seasons from cache");
   }
 
   final episodes = await fetchEpisodes(seasons);

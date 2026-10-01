@@ -6,154 +6,82 @@ part of 'next_episode_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$nextEpisodeHash() => r'0e0d20778779d498d7e8f6935bbdafc58ee27cad';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// Copied from Dart SDK
-class _SystemHash {
-  _SystemHash._();
-
-  static int combine(int hash, int value) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + value);
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
-    return hash ^ (hash >> 6);
-  }
-
-  static int finish(int hash) {
-    // ignore: parameter_assignments
-    hash = 0x1fffffff & (hash + ((0x03ffffff & hash) << 3));
-    // ignore: parameter_assignments
-    hash = hash ^ (hash >> 11);
-    return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
-  }
-}
-
-/// See also [nextEpisode].
 @ProviderFor(nextEpisode)
-const nextEpisodeProvider = NextEpisodeFamily();
+final nextEpisodeProvider = NextEpisodeFamily._();
 
-/// See also [nextEpisode].
-class NextEpisodeFamily extends Family<Episode?> {
-  /// See also [nextEpisode].
-  const NextEpisodeFamily();
+final class NextEpisodeProvider
+    extends $FunctionalProvider<Episode?, Episode?, Episode?>
+    with $Provider<Episode?> {
+  NextEpisodeProvider._({
+    required NextEpisodeFamily super.from,
+    required Episode super.argument,
+  }) : super(
+         retry: null,
+         name: r'nextEpisodeProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
 
-  /// See also [nextEpisode].
-  NextEpisodeProvider call(
-    Episode currentEpisode,
-  ) {
-    return NextEpisodeProvider(
-      currentEpisode,
-    );
+  @override
+  String debugGetCreateSourceHash() => _$nextEpisodeHash();
+
+  @override
+  String toString() {
+    return r'nextEpisodeProvider'
+        ''
+        '($argument)';
   }
 
+  @$internal
   @override
-  NextEpisodeProvider getProviderOverride(
-    covariant NextEpisodeProvider provider,
-  ) {
-    return call(
-      provider.currentEpisode,
-    );
+  $ProviderElement<Episode?> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  Episode? create(Ref ref) {
+    final argument = this.argument as Episode;
+    return nextEpisode(ref, argument);
   }
 
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'nextEpisodeProvider';
-}
-
-/// See also [nextEpisode].
-class NextEpisodeProvider extends AutoDisposeProvider<Episode?> {
-  /// See also [nextEpisode].
-  NextEpisodeProvider(
-    Episode currentEpisode,
-  ) : this._internal(
-          (ref) => nextEpisode(
-            ref as NextEpisodeRef,
-            currentEpisode,
-          ),
-          from: nextEpisodeProvider,
-          name: r'nextEpisodeProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$nextEpisodeHash,
-          dependencies: NextEpisodeFamily._dependencies,
-          allTransitiveDependencies:
-              NextEpisodeFamily._allTransitiveDependencies,
-          currentEpisode: currentEpisode,
-        );
-
-  NextEpisodeProvider._internal(
-    super._createNotifier, {
-    required super.name,
-    required super.dependencies,
-    required super.allTransitiveDependencies,
-    required super.debugGetCreateSourceHash,
-    required super.from,
-    required this.currentEpisode,
-  }) : super.internal();
-
-  final Episode currentEpisode;
-
-  @override
-  Override overrideWith(
-    Episode? Function(NextEpisodeRef provider) create,
-  ) {
-    return ProviderOverride(
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(Episode? value) {
+    return $ProviderOverride(
       origin: this,
-      override: NextEpisodeProvider._internal(
-        (ref) => create(ref as NextEpisodeRef),
-        from: from,
-        name: null,
-        dependencies: null,
-        allTransitiveDependencies: null,
-        debugGetCreateSourceHash: null,
-        currentEpisode: currentEpisode,
-      ),
+      providerOverride: $SyncValueProvider<Episode?>(value),
     );
-  }
-
-  @override
-  AutoDisposeProviderElement<Episode?> createElement() {
-    return _NextEpisodeProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is NextEpisodeProvider &&
-        other.currentEpisode == currentEpisode;
+    return other is NextEpisodeProvider && other.argument == argument;
   }
 
   @override
   int get hashCode {
-    var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, currentEpisode.hashCode);
-
-    return _SystemHash.finish(hash);
+    return argument.hashCode;
   }
 }
 
-mixin NextEpisodeRef on AutoDisposeProviderRef<Episode?> {
-  /// The parameter `currentEpisode` of this provider.
-  Episode get currentEpisode;
-}
+String _$nextEpisodeHash() => r'5be367e368eb2751c06ca2332f54966a4b1cc5e1';
 
-class _NextEpisodeProviderElement extends AutoDisposeProviderElement<Episode?>
-    with NextEpisodeRef {
-  _NextEpisodeProviderElement(super.provider);
+final class NextEpisodeFamily extends $Family
+    with $FunctionalFamilyOverride<Episode?, Episode> {
+  NextEpisodeFamily._()
+    : super(
+        retry: null,
+        name: r'nextEpisodeProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  NextEpisodeProvider call(Episode currentEpisode) =>
+      NextEpisodeProvider._(argument: currentEpisode, from: this);
 
   @override
-  Episode get currentEpisode => (origin as NextEpisodeProvider).currentEpisode;
+  String toString() => r'nextEpisodeProvider';
 }
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

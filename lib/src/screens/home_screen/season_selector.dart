@@ -7,9 +7,9 @@ class SeasonSelector extends StatefulWidget {
   final List<Season> seasons;
 
   const SeasonSelector({
-    Key? key,
+    super.key,
     required this.seasons,
-  }) : super(key: key);
+  });
 
   @override
   State<SeasonSelector> createState() => _SeasonSelectorState();

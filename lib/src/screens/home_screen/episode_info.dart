@@ -80,7 +80,7 @@ class _EpisodeInfoState extends ConsumerState<EpisodeInfo> {
                         watchEpisode(context);
                       },
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
+                        backgroundColor: WidgetStateProperty.all(
                           focusNode.hasFocus
                               ? Colors.white
                               : Colors.grey.shade400,
@@ -91,7 +91,7 @@ class _EpisodeInfoState extends ConsumerState<EpisodeInfo> {
                         color: Theme.of(context).primaryColor,
                       ),
                       label: Text(
-                        "Folge abspielen",
+                        "Play episode",
                         style: TextStyle(
                           color: Theme.of(context).primaryColor,
                         ),

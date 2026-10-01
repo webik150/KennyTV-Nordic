@@ -8,7 +8,7 @@ import 'package:kenny_tv/src/screens/home_screen/episode_selector.dart';
 import 'package:kenny_tv/src/screens/home_screen/season_selector.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   ConsumerState<HomeScreen> createState() => _HomeScreenState();

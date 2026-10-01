@@ -1,5 +1,5 @@
 RegExp seasonShortIdRegExp = RegExp(r"(?<=south-park\/)[a-zA-Z0-9]+");
-RegExp seasonNumberRegExp = RegExp(r"(?<=staffel-)\d+");
+RegExp seasonNumberRegExp = RegExp(r"(?<=season-)\d+");
 
 class Season {
   final String seasonUrl;

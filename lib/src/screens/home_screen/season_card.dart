@@ -11,11 +11,11 @@ class SeasonCard extends ConsumerStatefulWidget {
   final FocusNode? nextFocusNode;
 
   const SeasonCard({
-    Key? key,
+    super.key,
     this.previousFocusNode,
     this.nextFocusNode,
     required this.season,
-  }) : super(key: key);
+  });
 
   @override
   SeasonCardState createState() => SeasonCardState();
@@ -43,7 +43,7 @@ class SeasonCardState extends ConsumerState<SeasonCard> {
   @override
   Widget build(BuildContext context) {
     final currentlySelected =
-        ref.watch(selectedSeasonNotifierProvider).season == widget.season;
+        ref.watch(selectedSeasonProvider).season == widget.season;
 
     return KeyboardListener(
       focusNode: focusNode,
@@ -54,7 +54,7 @@ class SeasonCardState extends ConsumerState<SeasonCard> {
         switch (event.logicalKey) {
           case LogicalKeyboardKey.select:
             ref
-                .read(selectedSeasonNotifierProvider.notifier)
+                .read(selectedSeasonProvider.notifier)
                 .selectSeason(widget.season.number);
             break;
         }
@@ -75,7 +75,7 @@ class SeasonCardState extends ConsumerState<SeasonCard> {
           ),
           child: Center(
             child: Text(
-              "Staffel ${widget.season.number}",
+              "Season ${widget.season.number}",
               style: TextStyle(
                   color: currentlySelected
                       ? Theme.of(context).primaryColor

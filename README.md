@@ -80,7 +80,7 @@ flutter pub run build_runner watch
 
 ## Disclaimer
 
-This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with South Park Digital Studios LLC, MTV Networks, or any of their subsidiaries or their affiliates. The official South Park website, this project takes its content from, can be found at [http://www.southpark.de](http://www.southpark.de).
+This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with South Park Digital Studios LLC, MTV Networks, or any of their subsidiaries or their affiliates. The official South Park website, this project takes its content from, can be found at [http://www.southparkstudios.nu](http://www.southparkstudios.nu).
 
 This project is developed and maintained by independent developers. The source code available here is intended for educational and research purposes only. Please ensure you comply with all applicable local, state, national, and international laws when using this software. The developer of this project assumes no responsibility for any misuse or damage caused by this software.
 

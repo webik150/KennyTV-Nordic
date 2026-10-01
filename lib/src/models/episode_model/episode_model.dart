@@ -5,7 +5,7 @@ part "episode_model.freezed.dart";
 part "episode_model.g.dart";
 
 @freezed
-class EpisodeMediaImage with _$EpisodeMediaImage {
+abstract class EpisodeMediaImage with _$EpisodeMediaImage {
   factory EpisodeMediaImage({
     required String url,
   }) = _EpisodeMediaImage;
@@ -15,7 +15,7 @@ class EpisodeMediaImage with _$EpisodeMediaImage {
 }
 
 @freezed
-class EpisodeMedia with _$EpisodeMedia {
+abstract class EpisodeMedia with _$EpisodeMedia {
   factory EpisodeMedia({
     required String duration,
     required EpisodeMediaImage image,
@@ -26,7 +26,7 @@ class EpisodeMedia with _$EpisodeMedia {
 }
 
 @freezed
-class EpisodeMeta with _$EpisodeMeta {
+abstract class EpisodeMeta with _$EpisodeMeta {
   factory EpisodeMeta({
     required String subHeader,
     required String description,
@@ -39,7 +39,7 @@ class EpisodeMeta with _$EpisodeMeta {
 }
 
 @freezed
-class Episode with _$Episode {
+abstract class Episode with _$Episode {
   factory Episode({
     required String id,
     required String url,
@@ -52,7 +52,7 @@ class Episode with _$Episode {
 }
 
 @freezed
-class Episodes with _$Episodes {
+abstract class Episodes with _$Episodes {
   factory Episodes({
     required List<Episode> episodes,
     required Season season,
@@ -63,7 +63,7 @@ class Episodes with _$Episodes {
 }
 
 @freezed
-class EpisodesResponse with _$EpisodesResponse {
+abstract class EpisodesResponse with _$EpisodesResponse {
   factory EpisodesResponse({
     required Episodes items,
   }) = _EpisodesResponse;

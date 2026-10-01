@@ -1,8 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenny_tv/src/models/episode_model/episode_model.dart';
 
-class SelectedEpisodeNotifier extends StateNotifier<Episode?> {
-  SelectedEpisodeNotifier() : super(null);
+class SelectedEpisodeNotifier extends Notifier<Episode?> {
+  @override
+  Episode? build() => null;
 
   void setEpisode(Episode episode) {
     state = episode;
@@ -10,6 +11,4 @@ class SelectedEpisodeNotifier extends StateNotifier<Episode?> {
 }
 
 final selectedEpisodeProvider =
-    StateNotifierProvider<SelectedEpisodeNotifier, Episode?>((ref) {
-  return SelectedEpisodeNotifier();
-});
+    NotifierProvider<SelectedEpisodeNotifier, Episode?>(SelectedEpisodeNotifier.new);
