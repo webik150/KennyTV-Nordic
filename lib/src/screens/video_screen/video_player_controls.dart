@@ -8,17 +8,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kenny_tv/src/models/episode_model/episode_model.dart';
 import 'package:kenny_tv/src/providers/selected_episode_provider/selected_episode_provider.dart';
-import 'package:video_player/video_player.dart';
+import 'package:pro_video_player/pro_video_player.dart' as pro_video_player;
 
 const double _controlInsidePadding = 25.0;
 
 class VideoPlayerControls extends ConsumerStatefulWidget {
-  final VideoPlayerController controller;
+  final pro_video_player.ProVideoPlayerController controller;
   final Episode? episode;
   final Episode? nextEpisode;
 
-  const VideoPlayerControls({
-    super.key,
+  const VideoPlayerControls({super.key,
     required this.controller,
     required this.episode,
     required this.nextEpisode,

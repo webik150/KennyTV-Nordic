@@ -52,6 +52,10 @@ The app is developed in Flutter. You can learn more about it [here](https://flut
 
 The code is mostly undocumented and uncommented and I'm not an expert in Flutter; please keep that in mind if you plan contributing to this project.
 
+### self-notes
+
+Seems like subtitles are provided using WebVTT unused rn, but they ARE in the master.m3u8
+
 ### Create keystore
 
 I've replaced the default debugging keystore provided by Flutter with a self generated one.
