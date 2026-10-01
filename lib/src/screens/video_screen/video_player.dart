@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenny_tv/src/models/episode_model/episode_model.dart';
+import 'package:kenny_tv/src/screens/video_screen/video_player_controls.dart';
 import 'package:kenny_tv/src/utils/dio.dart';
 import 'package:pro_video_player/pro_video_player.dart' as flutter_video_player;
 
@@ -14,7 +15,7 @@ class VideoPlayer extends ConsumerStatefulWidget {
   const VideoPlayer({
     super.key,
     required this.episode,
-    required this.nextEpisode
+    required this.nextEpisode,
   });
 
   @override
@@ -58,7 +59,12 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
       _videoPlayerController =
           flutter_video_player.ProVideoPlayerController.network(masterUrl);
 
-      await _videoPlayerController!.initialize(source: flutter_video_player.VideoSource.playlist(masterUrl), options: flutter_video_player.VideoPlayerOptions(autoDiscoverSubtitles: true));
+      await _videoPlayerController!.initialize(
+        source: flutter_video_player.VideoSource.playlist(masterUrl),
+        options: flutter_video_player.VideoPlayerOptions(
+          autoDiscoverSubtitles: true,
+        ),
+      );
       if (!mounted) {
         return;
       }
@@ -100,8 +106,23 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
       return const Center(child: Text("Unable to play this episode"));
     }
     if (_videoPlayerController != null) {
-      final player = flutter_video_player.ProVideoPlayer(controller:_videoPlayerController!, controlsMode: flutter_video_player.ControlsMode.flutter,);
-      return player;
+      final player = flutter_video_player.ProVideoPlayer(
+        controller: _videoPlayerController!,
+        controlsMode: flutter_video_player.ControlsMode.none,
+      );
+
+      return flutter_video_player.ProVideoPlayerBuilder(
+        controller: _videoPlayerController!,
+        controlsMode: flutter_video_player.ControlsMode.flutter, // Used in all views
+        builder: (context, controller, child) {
+          return flutter_video_player.ProVideoPlayer(controller: controller);
+        },
+      );
+
+      return Stack(children:[player, VideoPlayerControls(
+        controller: _videoPlayerController!,
+        episode: widget.episode,
+        nextEpisode: widget.nextEpisode)]);
     }
 
     return const CircularProgressIndicator();
