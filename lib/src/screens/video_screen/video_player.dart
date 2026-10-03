@@ -4,7 +4,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenny_tv/src/models/episode_model/episode_model.dart';
-import 'package:kenny_tv/src/screens/video_screen/video_player_controls.dart';
 import 'package:kenny_tv/src/utils/dio.dart';
 import 'package:pro_video_player/pro_video_player.dart' as flutter_video_player;
 
@@ -63,6 +62,7 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
         source: flutter_video_player.VideoSource.playlist(masterUrl),
         options: flutter_video_player.VideoPlayerOptions(
           autoDiscoverSubtitles: true,
+          subtitleRenderMode: flutter_video_player.SubtitleRenderMode.flutter,
         ),
       );
       if (!mounted) {
@@ -100,29 +100,90 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
     super.dispose();
   }
 
+  void _showSubtitlePicker(
+    BuildContext context,
+    flutter_video_player.ProVideoPlayerController controller,
+  ) {
+    final tracks = controller.value.subtitleTracks;
+    final selectedTrack = controller.value.selectedSubtitleTrack;
+
+    showDialog<void>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text("Subtitles"),
+        content: tracks.isEmpty
+            ? const Text("No subtitle tracks are available for this video.")
+            : SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ListTile(
+                      autofocus: selectedTrack == null,
+                      title: const Text("Off"),
+                      selected: selectedTrack == null,
+                      onTap: () {
+                        Navigator.of(dialogContext).pop();
+                        unawaited(controller.setSubtitleTrack(null));
+                      },
+                    ),
+                    ...tracks.map(
+                      (track) => ListTile(
+                        autofocus: selectedTrack?.id == track.id,
+                        title: Text(track.label),
+                        selected: selectedTrack?.id == track.id,
+                        onTap: () {
+                          Navigator.of(dialogContext).pop();
+                          unawaited(controller.setSubtitleTrack(track));
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(),
+            child: const Text("Close"),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_errorWhileInit) {
       return const Center(child: Text("Unable to play this episode"));
     }
     if (_videoPlayerController != null) {
-      final player = flutter_video_player.ProVideoPlayer(
-        controller: _videoPlayerController!,
-        controlsMode: flutter_video_player.ControlsMode.none,
-      );
-
       return flutter_video_player.ProVideoPlayerBuilder(
         controller: _videoPlayerController!,
-        controlsMode: flutter_video_player.ControlsMode.flutter, // Used in all views
+        controlsMode:
+            flutter_video_player.ControlsMode.flutter, // Used in all views
         builder: (context, controller, child) {
-          return flutter_video_player.ProVideoPlayer(controller: controller);
+          return Stack(
+            children: [
+              flutter_video_player.ProVideoPlayer(controller: controller),
+              Positioned(
+                top: 16.0,
+                right: 16.0,
+                child: SafeArea(
+                  child: IconButton(
+                    autofocus: true,
+                    tooltip: "Subtitles",
+                    icon: Icon(
+                      controller.value.selectedSubtitleTrack == null
+                          ? Icons.closed_caption_off
+                          : Icons.closed_caption,
+                    ),
+                    onPressed: () => _showSubtitlePicker(context, controller),
+                  ),
+                ),
+              ),
+            ],
+          );
         },
       );
-
-      return Stack(children:[player, VideoPlayerControls(
-        controller: _videoPlayerController!,
-        episode: widget.episode,
-        nextEpisode: widget.nextEpisode)]);
     }
 
     return const CircularProgressIndicator();
