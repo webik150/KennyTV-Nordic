@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart'
+    show KeyDownEvent, KeyEvent, KeyRepeatEvent, LogicalKeyboardKey;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenny_tv/src/models/episode_model/episode_model.dart';
 import 'package:kenny_tv/src/utils/dio.dart';
@@ -23,8 +25,23 @@ class VideoPlayer extends ConsumerStatefulWidget {
 
 class _VideoPlayerState extends ConsumerState<VideoPlayer> {
   flutter_video_player.ProVideoPlayerController? _videoPlayerController;
+  flutter_video_player.VideoControlsController? _videoControlsController;
   Timer? _switchControllerTimer;
   bool _errorWhileInit = false;
+
+  KeyEventResult _handleNavigationKey(FocusNode node, KeyEvent event) {
+    if ((event is KeyDownEvent || event is KeyRepeatEvent) &&
+        (event.logicalKey == LogicalKeyboardKey.arrowUp ||
+            event.logicalKey == LogicalKeyboardKey.arrowDown ||
+            event.logicalKey == LogicalKeyboardKey.arrowLeft ||
+            event.logicalKey == LogicalKeyboardKey.arrowRight)) {
+      _videoControlsController
+        ?..showControls()
+        ..resetHideTimer();
+    }
+
+    return KeyEventResult.ignored;
+  }
 
   Future<void> initVideoPlayer() async {
     try {
@@ -126,17 +143,28 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
                         unawaited(controller.setSubtitleTrack(null));
                       },
                     ),
-                    ...tracks.map(
-                      (track) => ListTile(
+                    ...tracks.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final track = entry.value;
+                      final label = track.label.trim();
+                      final language = track.language?.trim();
+
+                      return ListTile(
                         autofocus: selectedTrack?.id == track.id,
-                        title: Text(track.label),
+                        title: Text(
+                          label.isNotEmpty
+                              ? label
+                              : language != null && language.isNotEmpty
+                              ? language
+                              : "Subtitle ${index + 1}",
+                        ),
                         selected: selectedTrack?.id == track.id,
                         onTap: () {
                           Navigator.of(dialogContext).pop();
                           unawaited(controller.setSubtitleTrack(track));
                         },
-                      ),
-                    ),
+                      );
+                    }),
                   ],
                 ),
               ),
@@ -161,26 +189,38 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
         controlsMode:
             flutter_video_player.ControlsMode.flutter, // Used in all views
         builder: (context, controller, child) {
-          return Stack(
-            children: [
-              flutter_video_player.ProVideoPlayer(controller: controller),
-              Positioned(
-                top: 16.0,
-                right: 16.0,
-                child: SafeArea(
-                  child: IconButton(
-                    autofocus: true,
-                    tooltip: "Subtitles",
-                    icon: Icon(
-                      controller.value.selectedSubtitleTrack == null
-                          ? Icons.closed_caption_off
-                          : Icons.closed_caption,
+          return Focus(
+            onKeyEvent: _handleNavigationKey,
+            child: Stack(
+              children: [
+                flutter_video_player.ProVideoPlayer(
+                  controller: controller,
+                  controlsBuilder: (context, playerController) =>
+                      flutter_video_player.VideoPlayerControls(
+                        controller: playerController,
+                        onControlsControllerCreated: (controlsController) {
+                          _videoControlsController = controlsController;
+                        },
+                      ),
+                ),
+                Positioned(
+                  top: 16.0,
+                  right: 16.0,
+                  child: SafeArea(
+                    child: IconButton(
+                      autofocus: true,
+                      tooltip: "Subtitles",
+                      icon: Icon(
+                        controller.value.selectedSubtitleTrack == null
+                            ? Icons.closed_caption_off
+                            : Icons.closed_caption,
+                      ),
+                      onPressed: () => _showSubtitlePicker(context, controller),
                     ),
-                    onPressed: () => _showSubtitlePicker(context, controller),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       );
