@@ -1,6 +1,10 @@
+import 'dart:async';
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, TargetPlatform;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenny_tv/src/models/episode_model/episode_model.dart';
 import 'package:kenny_tv/src/utils/dio.dart';
@@ -61,7 +65,7 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
         options: flutter_video_player.VideoPlayerOptions(
           allowPip: false,
           allowCasting: false,
-          showFullscreenStatusBar: false
+          showFullscreenStatusBar: false,
         ),
       );
       if (!mounted) {
@@ -88,12 +92,20 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
   @override
   void initState() {
     super.initState();
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      unawaited(
+        SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky),
+      );
+    }
     initVideoPlayer();
   }
 
   @override
   void dispose() {
     log("Disposing video player");
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      unawaited(SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge));
+    }
     _videoPlayerController?.dispose();
     super.dispose();
   }
@@ -109,14 +121,26 @@ class _VideoPlayerState extends ConsumerState<VideoPlayer> {
         controlsMode:
             flutter_video_player.ControlsMode.flutter, // Used in all views
         builder: (context, controller, child) {
-          return flutter_video_player.ProVideoPlayer(controller: controller,controlsBuilder: (context, controller) =>
-             AspectRatio(aspectRatio: controller.value.aspectRatio, child: flutter_video_player.VideoPlayerControls(controller: controller,buttonsConfig: flutter_video_player.ButtonsConfig(showFullscreenButton: false, showBackgroundPlaybackButton: false, showScalingModeButton: false)))
-          ,);
+          return flutter_video_player.ProVideoPlayer(
+            controller: controller,
+            fillBounds: true,
+            controlsBuilder: (context, controller) => Positioned.fill(
+              child: flutter_video_player.VideoPlayerControls(
+                controller: controller,
+                forceMobileLayout: true,
+                buttonsConfig: flutter_video_player.ButtonsConfig(
+                  showFullscreenButton: false,
+                  showBackgroundPlaybackButton: false,
+                  showScalingModeButton: false,
+                ),
+              ),
+            ),
+          );
         },
         useDefaultFullscreen: false,
       );
     }
 
-    return const CircularProgressIndicator();
+    return const Center(child: CircularProgressIndicator());
   }
 }

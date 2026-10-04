@@ -6,7 +6,7 @@ publish_to: "none"
 
 version: 1.0.2+3
 
-minSdkVersion: "21"
+minSdkVersion: "22"
 targetSdkVersion: "30"
 
 environment:
@@ -32,6 +32,7 @@ dependencies:
     pro_video_player:
         path: packages/pro_video_player/pro_video_player
 
+    intl: any
 dev_dependencies:
     flutter_test:
         sdk: flutter

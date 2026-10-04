@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kenny_tv/src/providers/next_episode_provider/next_episode_provider.dart';
@@ -19,14 +18,9 @@ class VideoScreen extends ConsumerWidget {
         : null;
 
     return Scaffold(
-      body: Center(
-        child: selectedEpisode == null || nextEpisode == null
-            ? const CircularProgressIndicator()
-            : VideoPlayer(
-                episode: selectedEpisode,
-                nextEpisode: nextEpisode,
-              ),
-      ),
+      body: selectedEpisode == null || nextEpisode == null
+          ? const Center(child: CircularProgressIndicator())
+          : VideoPlayer(episode: selectedEpisode, nextEpisode: nextEpisode),
     );
   }
 }
